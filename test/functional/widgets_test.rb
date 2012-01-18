@@ -291,4 +291,24 @@ xml =<<EOF
 EOF
     assert_equal xml, response.body
   end  
+  
+  test "map widget" do
+      get :show, :id => "map", :key => "x"
+xml =<<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <points>
+    <point>
+    	<ip>178.125.193.227</ip>
+    	<color>ff0000</color>
+    </point>
+    <point>
+    	<ip>178.125.193.228</ip>
+    	<color>00ff00</color>
+    </point>
+  </points>
+</root>
+EOF
+      assert_equal xml, response.body
+    end
 end

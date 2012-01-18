@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <points>
+    <% @data[:points].each do |point| %>
+    <point>
+    	<ip><%= point[:ip] %></ip>
+    	<color><%= point[:color] %></color>
+    </point>
+    <% end %>
+  </points>
+</root>
